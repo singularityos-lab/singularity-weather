@@ -1,0 +1,16 @@
+{
+    "schema-id": "dev.sinty.weather",
+    "settings": [
+        {
+            "key": "units",
+            "label": "Units",
+            "type": "string",
+            "widget": "combo",
+            "options": [
+                { "id": "auto", "label": "Automatic" },
+                { "id": "metric", "label": "Metric (°C, km/h, mm)" },
+                { "id": "imperial", "label": "Imperial (°F, mph, in)" }
+            ]
+        }
+    ]
+}

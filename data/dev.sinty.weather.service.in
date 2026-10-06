@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=dev.sinty.weather
+Exec=@bindir@/singularity-weather --gapplication-service

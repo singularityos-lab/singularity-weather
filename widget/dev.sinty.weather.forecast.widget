@@ -1,0 +1,8 @@
+[Widget]
+Id=weather.forecast
+ProviderId=dev.sinty.weather
+Name=Weather
+IconName=weather-few-clouds-symbolic
+Sizes=1x1;2x1;4x2
+Module=libsingularity-weather-widget.so
+ModuleSymbol=singularity_weather_widget_new

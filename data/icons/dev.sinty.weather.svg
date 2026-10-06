@@ -1,0 +1,45 @@
+<svg width="236" height="236" viewBox="0 0 236 236" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="sun_w" cx="138" cy="74" r="62" gradientUnits="userSpaceOnUse">
+<stop offset="0%" stop-color="#ffe27a"/>
+<stop offset="60%" stop-color="#ffb52e"/>
+<stop offset="100%" stop-color="#f08a00"/>
+</radialGradient>
+<radialGradient id="glow_w" cx="138" cy="74" r="66" gradientUnits="userSpaceOnUse">
+<stop offset="0%" stop-color="#ffcf4d" stop-opacity="0.55"/>
+<stop offset="100%" stop-color="#ffcf4d" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="cloud_front" x1="40" y1="96" x2="170" y2="206" gradientUnits="userSpaceOnUse">
+<stop offset="0%" stop-color="#ffffff"/>
+<stop offset="70%" stop-color="#eef4f8"/>
+<stop offset="100%" stop-color="#d6e3ee"/>
+</linearGradient>
+<linearGradient id="cloud_back" x1="40" y1="96" x2="170" y2="206" gradientUnits="userSpaceOnUse">
+<stop offset="0%" stop-color="#9bbdd0"/>
+<stop offset="100%" stop-color="#5f89a3"/>
+</linearGradient>
+<radialGradient id="bloom_c" cx="78" cy="118" r="90" gradientUnits="userSpaceOnUse">
+<stop offset="0%" stop-color="white" stop-opacity="0.6"/>
+<stop offset="100%" stop-color="white" stop-opacity="0"/>
+</radialGradient>
+<filter id="fshadow_c" x="0" y="80" width="236" height="150" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0d264c" flood-opacity="0.45"/></filter>
+<clipPath id="cloud_clip">
+<path d="M58 200 C28 200 12 180 14 158 C16 136 34 122 56 124 C60 100 82 84 108 88 C128 91 142 104 148 120 C156 116 166 115 176 118 C200 124 212 146 206 168 C201 188 186 200 164 200 Z"/>
+</clipPath>
+</defs>
+<circle cx="138" cy="74" r="66" fill="url(#glow_w)"/>
+<g stroke="#ffc53d" stroke-width="8" stroke-linecap="round">
+<line x1="138" y1="6" x2="138" y2="20"/>
+<line x1="186" y1="26" x2="176" y2="36"/>
+<line x1="206" y1="74" x2="192" y2="74"/>
+<line x1="90" y1="26" x2="100" y2="36"/>
+<line x1="70" y1="74" x2="84" y2="74"/>
+</g>
+<circle cx="138" cy="74" r="46" fill="url(#sun_w)"/>
+<circle cx="124" cy="60" r="14" fill="white" fill-opacity="0.35"/>
+<path d="M58 208 C28 208 12 188 14 166 C16 144 34 130 56 132 C60 108 82 92 108 96 C128 99 142 112 148 128 C156 124 166 123 176 126 C200 132 212 154 206 176 C201 196 186 208 164 208 Z" fill="url(#cloud_back)"/>
+<path d="M58 200 C28 200 12 180 14 158 C16 136 34 122 56 124 C60 100 82 84 108 88 C128 91 142 104 148 120 C156 116 166 115 176 118 C200 124 212 146 206 168 C201 188 186 200 164 200 Z" fill="url(#cloud_front)" filter="url(#fshadow_c)"/>
+<g clip-path="url(#cloud_clip)">
+<circle cx="78" cy="118" r="90" fill="url(#bloom_c)"/>
+</g>
+</svg>

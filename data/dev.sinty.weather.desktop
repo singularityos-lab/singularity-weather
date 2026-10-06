@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=Weather
+Comment=Forecasts, sunrise and sunset for any place
+Exec=singularity-weather
+Icon=dev.sinty.weather
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=weather;forecast;temperature;rain;sun;sunrise;sunset;wind;
+StartupWMClass=dev.sinty.weather
+Actions=add-place;use-location;
+
+[Desktop Action add-place]
+Name=Add a Place
+Exec=singularity-weather --add-place
+
+[Desktop Action use-location]
+Name=Use My Location
+Exec=singularity-weather --use-location

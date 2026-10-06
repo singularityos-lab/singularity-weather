@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="dev.sinty.weather" path="/dev/sinty/weather/">
+    <key name="places" type="a(sssdd)">
+      <default>[]</default>
+      <summary>Places</summary>
+      <description>Saved places as (name, region, country, latitude, longitude), in the order shown.</description>
+    </key>
+    <key name="selected" type="s">
+      <default>''</default>
+      <summary>Selected place</summary>
+      <description>Identifier of the place shown when the app opens.</description>
+    </key>
+    <key name="units" type="s">
+      <choices>
+        <choice value="auto"/>
+        <choice value="metric"/>
+        <choice value="imperial"/>
+      </choices>
+      <default>'auto'</default>
+      <summary>Units</summary>
+      <description>auto follows the region of the system; metric uses °C, km/h and mm; imperial uses °F, mph and inches.</description>
+    </key>
+  </schema>
+</schemalist>
