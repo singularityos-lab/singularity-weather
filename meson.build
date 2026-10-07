@@ -34,6 +34,7 @@ executable('singularity-weather',
     'src/charts.vala',
     'src/snapshot.vala',
     'src/search.vala',
+    'src/forecast_bus.vala',
   ),
   dependencies: [gtk_dep, gee_dep, json_dep, soup_dep, m_dep, libsingularity_dep],
   install: true

@@ -53,6 +53,15 @@ namespace Singularity.Apps.Weather {
 
             add_bubble_icon ("list-add-symbolic", _("Add Place"), () => open_search ());
             add_bubble_icon ("view-refresh-symbolic", _("Refresh"), () => refresh_all.begin (true));
+            add_bubble_icon ("singularity-share-symbolic", _("Share"), () => {
+                var place = find (selected);
+                if (place == null || !forecasts.has_key (place.id)) return;
+                var f = forecasts[place.id];
+                var c = Conditions.describe (f.code, f.is_day);
+                string unit = Units.from_setting (app.settings.get_string ("units")) == Units.IMPERIAL ? "°F" : "°C";
+                string text = _("%s: %s, %d%s").printf (place.name, c.label, (int) Math.round (f.temperature), unit);
+                Singularity.Share.text (this, text, _("Weather"));
+            });
 
             var entries = new ActionEntry[] {
                 { "use-location", () => {
