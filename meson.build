@@ -70,6 +70,10 @@ configure_file(
   install_dir: get_option('datadir') / 'dbus-1' / 'services'
 )
 
+install_data('data/capabilities/dev.sinty.Weather1.ini',
+  install_dir: get_option('datadir') / 'singularity' / 'capabilities'
+)
+
 install_data('data/dev.sinty.weather.desktop',
   install_dir: get_option('datadir') / 'applications'
 )
