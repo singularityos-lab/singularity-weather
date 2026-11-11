@@ -53,6 +53,7 @@ namespace Singularity.Apps.Weather {
             base.startup ();
             settings = new GLib.Settings ("dev.sinty.weather");
             service = new WeatherService ();
+            WeatherIntents.install (this);
             var provider = new CssProvider ();
             provider.load_from_string (CSS);
             StyleContext.add_provider_for_display (Gdk.Display.get_default (), provider, STYLE_PROVIDER_PRIORITY_USER + 1);
