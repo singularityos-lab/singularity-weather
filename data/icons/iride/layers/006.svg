@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="236" height="236" viewBox="0 0 236 236" fill="none"><defs><radialGradient id="sun_w" cx="138" cy="74" r="62" gradientUnits="userSpaceOnUse">
+<stop offset="0%" stop-color="#ffe27a" />
+<stop offset="60%" stop-color="#ffb52e" />
+<stop offset="100%" stop-color="#f08a00" />
+</radialGradient>
+</defs><circle cx="138" cy="74" r="46" fill="url(#sun_w)" />
+</svg>

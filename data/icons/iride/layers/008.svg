@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="236" height="236" viewBox="0 0 236 236" fill="none"><defs><linearGradient id="cloud_back" x1="40" y1="96" x2="170" y2="206" gradientUnits="userSpaceOnUse">
+<stop offset="0%" stop-color="#9bbdd0" />
+<stop offset="100%" stop-color="#5f89a3" />
+</linearGradient>
+</defs><path d="M58 208 C28 208 12 188 14 166 C16 144 34 130 56 132 C60 108 82 92 108 96 C128 99 142 112 148 128 C156 124 166 123 176 126 C200 132 212 154 206 176 C201 196 186 208 164 208 Z" fill="url(#cloud_back)" />
+</svg>

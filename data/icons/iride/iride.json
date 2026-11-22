@@ -1,0 +1,295 @@
+{
+ "format": 1,
+ "canvas": [
+  236,
+  236
+ ],
+ "box": [
+  0,
+  6,
+  212,
+  208
+ ],
+ "stack": [
+  {
+   "layer": "layers/000.svg",
+   "piece": "halo"
+  },
+  {
+   "layer": "layers/001.svg",
+   "piece": "ray-0"
+  },
+  {
+   "layer": "layers/002.svg",
+   "piece": "ray-1"
+  },
+  {
+   "layer": "layers/003.svg",
+   "piece": "ray-2"
+  },
+  {
+   "layer": "layers/004.svg",
+   "piece": "ray-3"
+  },
+  {
+   "layer": "layers/005.svg",
+   "piece": "ray-4"
+  },
+  {
+   "layer": "layers/006.svg",
+   "piece": "sun"
+  },
+  {
+   "rim": "M92 74A46 46 0 1 0 184 74A46 46 0 1 0 92 74Z",
+   "light": [
+    92,
+    28,
+    184,
+    120
+   ],
+   "piece": "sun"
+  },
+  {
+   "layer": "layers/007.svg",
+   "piece": "sun"
+  },
+  {
+   "layer": "layers/008.svg",
+   "piece": "cloud"
+  },
+  {
+   "layer": "layers/009.svg",
+   "piece": "cloud"
+  },
+  {
+   "rim": "M58 200 C28 200 12 180 14 158 C16 136 34 122 56 124 C60 100 82 84 108 88 C128 91 142 104 148 120 C156 116 166 115 176 118 C200 124 212 146 206 168 C201 188 186 200 164 200 Z",
+   "light": [
+    12.0,
+    84.0,
+    212.0,
+    200.0
+   ],
+   "piece": "cloud"
+  },
+  {
+   "clip": "M58 200 C28 200 12 180 14 158 C16 136 34 122 56 124 C60 100 82 84 108 88 C128 91 142 104 148 120 C156 116 166 115 176 118 C200 124 212 146 206 168 C201 188 186 200 164 200 Z",
+   "stack": [
+    {
+     "layer": "layers/010.svg",
+     "piece": "cloud"
+    }
+   ]
+  }
+ ],
+ "motion": [
+  {
+   "piece": "halo",
+   "origin": [
+    138.0,
+    74.0
+   ],
+   "tracks": [
+    {
+     "kind": "opacity",
+     "from": [
+      0
+     ],
+     "at": 420,
+     "duration": 300,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "piece": "ray-0",
+   "origin": [
+    138.0,
+    74.0
+   ],
+   "tracks": [
+    {
+     "kind": "rotate",
+     "from": [
+      -70
+     ],
+     "at": 220,
+     "duration": 400,
+     "ease": "spring"
+    },
+    {
+     "kind": "opacity",
+     "from": [
+      0
+     ],
+     "at": 220,
+     "duration": 120,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "piece": "ray-1",
+   "origin": [
+    138.0,
+    74.0
+   ],
+   "tracks": [
+    {
+     "kind": "rotate",
+     "from": [
+      -70
+     ],
+     "at": 270,
+     "duration": 400,
+     "ease": "spring"
+    },
+    {
+     "kind": "opacity",
+     "from": [
+      0
+     ],
+     "at": 270,
+     "duration": 120,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "piece": "ray-2",
+   "origin": [
+    138.0,
+    74.0
+   ],
+   "tracks": [
+    {
+     "kind": "rotate",
+     "from": [
+      -70
+     ],
+     "at": 320,
+     "duration": 400,
+     "ease": "spring"
+    },
+    {
+     "kind": "opacity",
+     "from": [
+      0
+     ],
+     "at": 320,
+     "duration": 120,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "piece": "ray-3",
+   "origin": [
+    138.0,
+    74.0
+   ],
+   "tracks": [
+    {
+     "kind": "rotate",
+     "from": [
+      -70
+     ],
+     "at": 370,
+     "duration": 400,
+     "ease": "spring"
+    },
+    {
+     "kind": "opacity",
+     "from": [
+      0
+     ],
+     "at": 370,
+     "duration": 120,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "piece": "ray-4",
+   "origin": [
+    138.0,
+    74.0
+   ],
+   "tracks": [
+    {
+     "kind": "rotate",
+     "from": [
+      -70
+     ],
+     "at": 420,
+     "duration": 400,
+     "ease": "spring"
+    },
+    {
+     "kind": "opacity",
+     "from": [
+      0
+     ],
+     "at": 420,
+     "duration": 120,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "piece": "sun",
+   "origin": [
+    138.0,
+    74.0
+   ],
+   "tracks": [
+    {
+     "kind": "translate",
+     "from": [
+      -9.44,
+      51.92
+     ],
+     "at": 80,
+     "duration": 480,
+     "ease": "spring"
+    },
+    {
+     "kind": "opacity",
+     "from": [
+      0
+     ],
+     "at": 80,
+     "duration": 140,
+     "ease": "out"
+    }
+   ]
+  },
+  {
+   "piece": "cloud",
+   "origin": [
+    112.0,
+    142.0
+   ],
+   "tracks": [
+    {
+     "kind": "translate",
+     "from": [
+      -23.6,
+      0
+     ],
+     "at": 0,
+     "duration": 460,
+     "ease": "spring"
+    },
+    {
+     "kind": "opacity",
+     "from": [
+      0
+     ],
+     "at": 0,
+     "duration": 120,
+     "ease": "out"
+    }
+   ]
+  }
+ ]
+}
