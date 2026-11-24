@@ -3,7 +3,7 @@ using Singularity.Widgets;
 
 namespace Singularity.Apps.Weather {
 
-    public class WeatherApp : Singularity.Application, Singularity.Migration.Migratable {
+    public class WeatherApp : Singularity.Application, Singularity.Migration.Migratable, Singularity.Startup.Bootable {
         public GLib.Settings settings { get; private set; }
         public WeatherService service { get; private set; }
         private WeatherSearch search;
@@ -133,14 +133,36 @@ namespace Singularity.Apps.Weather {
             set_accels_for_action ("win.close", { "<Control>w" });
         }
 
-        public override void activate () {
+        public Singularity.Startup.Plan build_plan (Singularity.Startup.Request request) {
+            var plan = new Singularity.Startup.Plan ();
+            plan.version = "weather-1";
+            if (request.kind == Singularity.Startup.RequestKind.SERVICE) {
+                plan.main ("ready", Singularity.Startup.Category.PREPARE, (c) => {})
+                    .reaches (Singularity.Startup.Milestone.SHELL_READY)
+                    .reaches (Singularity.Startup.Milestone.CONTENT_READY)
+                    .reaches (Singularity.Startup.Milestone.INTERACTIVE);
+                return plan;
+            }
+            plan.main ("window", Singularity.Startup.Category.SHELL, (c) => {
+                c.window = show_window ();
+            }).reaches (Singularity.Startup.Milestone.SHELL_READY)
+              .reaches (Singularity.Startup.Milestone.CONTENT_READY)
+              .reaches (Singularity.Startup.Milestone.INTERACTIVE);
+            return plan;
+        }
+
+        public void handle_request (Singularity.Startup.Request request) {
+            show_window ();
+        }
+
+        private WeatherWindow show_window () {
             var window = main_window ();
-            if (pending_action == "") return;
+            if (pending_action == "") return window;
             string action = pending_action;
             pending_action = "";
             if (window.is_active) {
                 activate_action (action, null);
-                return;
+                return window;
             }
             ulong handler = 0;
             uint fallback = 0;
@@ -159,6 +181,7 @@ namespace Singularity.Apps.Weather {
                 activate_action (action, null);
                 return Source.REMOVE;
             });
+            return window;
         }
 
         private WeatherWindow main_window () {
