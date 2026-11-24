@@ -3,7 +3,7 @@ using Singularity.Widgets;
 
 namespace Singularity.Apps.Weather {
 
-    public class WeatherApp : Singularity.Application {
+    public class WeatherApp : Singularity.Application, Singularity.Migration.Migratable {
         public GLib.Settings settings { get; private set; }
         public WeatherService service { get; private set; }
         private WeatherSearch search;
@@ -173,7 +173,32 @@ namespace Singularity.Apps.Weather {
             return window;
         }
 
-        public void open_place (Place place) {
+        public Variant save_model () {
+            return new VariantDict ().end ();
+        }
+
+        public async void restore_model (Variant model) throws Error {
+        }
+
+        public string window_kind (Gtk.Window w) {
+            return (w is WeatherWindow) ? "weather" : "";
+        }
+
+        public Variant save_window (Gtk.Window w) {
+            return ((WeatherWindow) w).save_migration ();
+        }
+
+        public async Gtk.Window? rebuild_window (string kind, Variant data) throws Error {
+            if (kind != "weather") return null;
+            foreach (var old in get_windows ().copy ()) {
+                if (old is WeatherWindow) old.destroy ();
+            }
+            var w = new WeatherWindow (this);
+            yield w.restore_migration (data);
+            return w;
+        }
+
+                public void open_place (Place place) {
             main_window ().add_place (place);
         }
 

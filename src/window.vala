@@ -96,10 +96,9 @@ namespace Singularity.Apps.Weather {
                 refresh_all.begin (false);
                 return Source.CONTINUE;
             });
-            close_request.connect (() => {
+            ((Widget) this).destroy.connect (() => {
                 if (refresh_source != 0) Source.remove (refresh_source);
                 refresh_source = 0;
-                return false;
             });
             refresh_all.begin (false);
         }
@@ -150,6 +149,32 @@ namespace Singularity.Apps.Weather {
             rebuild_sidebar ();
             show_selected ();
             refresh_place.begin (existing, true);
+        }
+
+        public Variant save_migration () {
+            var d = new VariantDict ();
+            var place = find (selected);
+            if (place != null) d.insert_value ("place", new Variant ("(sssdd)", place.name, place.region, place.country, place.latitude, place.longitude));
+            return d.end ();
+        }
+
+        public async void restore_migration (Variant data) {
+            var d = new VariantDict (data);
+            var saved = d.lookup_value ("place", new VariantType ("(sssdd)"));
+            if (saved != null) {
+                string name, region, country;
+                double latitude, longitude;
+                saved.get ("(sssdd)", out name, out region, out country, out latitude, out longitude);
+                var moved = new Place (name, region, country, latitude, longitude);
+                if (find (moved.id) == null) {
+                    places.add (moved);
+                    selected = moved.id;
+                    save_places ();
+                    rebuild_sidebar ();
+                }
+                select_place (moved.id);
+            }
+            yield refresh_all (false);
         }
 
         private void remove_place (Place place) {
